@@ -28,6 +28,20 @@ TARGET_BOARD_INFO_FILE := device/motorola/falcon/board-info.txt
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 TARGET_KERNEL_CONFIG := falcon_defconfig
 
+# Fusion Optimizations
+FUSION_OPT := true
+FUSION_O3 := true
+FUSION_STRICT := false
+FUSION_OFAST := true
+FUSION_KRAIT := false
+FUSION_GRAPHITE := true
+FUSION_PIPE := false
+FUSION_ENABLE_GCCONLY := true
+FLOOP_NEST_OPTIMIZE := true
+FUSION_FFAST_MATH := true
+TARGET_FUSION_ROM := 4.9
+TARGET_FUSION_KERNEL := 4.9-sm
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_falcon.c
@@ -44,3 +58,6 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 
 # inherit from the proprietary version
 -include vendor/motorola/falcon/BoardConfigVendor.mk
+
+# SaberMod
+-include vendor/fusion/config/sm.mk
